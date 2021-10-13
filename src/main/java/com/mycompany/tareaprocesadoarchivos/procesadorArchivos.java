@@ -19,7 +19,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
 /**
- *
+ * https://github.com/Pablohierre/procesador-archivos.git
  * @author hierr
  */
 public class procesadorArchivos extends javax.swing.JFrame {
@@ -206,8 +206,11 @@ public class procesadorArchivos extends javax.swing.JFrame {
 
                 for(String palabra:palabras){
                     FileWriter writer=null;
+                    /**
+                     * Si la palabra que me encuentro tiene la longitud deseada y no empieza por números o carácteres especiales, la sumo al histograma
+                     */
                 try {
-                    if(palabra.length()>2){
+                    if(palabra.length()>2&palabra.charAt(0)>(char)65&palabra.charAt(0)<(char)237){
                         recuento.merge(palabra, 1, Integer::sum);
                     }
                                         
